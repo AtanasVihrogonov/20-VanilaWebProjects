@@ -7,7 +7,7 @@
 body {
   background-color: #242333;
   color: #fff;
-  font-size: 20px;
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,7 @@ body {
   background-color: #fff;
   border: 0;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 10px;
   padding: 5px 15px 5px 15px;
   /* Set prefix */
@@ -41,8 +41,8 @@ body {
 
 .seat {
   background-color: #444451;
-  height: 15px;
-  width: 19px;
+  height: 12px;
+  width: 16px;
   margin: 3px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
