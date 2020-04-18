@@ -1,132 +1,130 @@
 const data = [
   {
-    id: "1",
+    id: "01",
     projectName: "Form Validator",
     url: "/form-validator/index.html"
   },
   {
-    id: "2",
+    id: "02",
     projectName: "Movie Seat Booking",
     url: "/movie-seat-booking/index.html"
   },
   {
-    id: "3",
+    id: "03",
     projectName: "Custom Video Player",
     url: "/video-player/index.html"
   },
   {
-    id: "4",
-    projectName: " ",
+    id: "04",
+    projectName: "",
     url: ""
   },
   {
-    id: "5",
-    projectName: " ",
+    id: "05",
+    projectName: "",
     url:""
   },
   {
-    id: "6",
-    projectName: " ",
+    id: "06",
+    projectName: "",
     url: ""
   },
   {
-    id: "7",
-    projectName: " ",
+    id: "07",
+    projectName: "",
     url:""
   },
   {
-    id: "8",
-    projectName: " ",
+    id: "08",
+    projectName: "",
     url: ""
   },
   {
-    id: "9",
-    projectName: " ",
+    id: "09",
+    projectName: "",
     url: ""
   },
   {
     id: "10",
-    projectName: " ",
+    projectName: "",
     url: ""
   },
   {
     id: "11",
-    projectName: " ",
+    projectName: "",
     url: ""
   },
   {
     id: "12",
-    projectName: " ",
+    projectName: "",
     url: ""
   },
   {
     id: "13",
-    projectName: " ",
+    projectName: "",
     url: ""
   },
   {
     id: "14",
-    projectName: " ",
+    projectName: "",
     url: ""
   },
   {
     id: "15",
-    projectName: " ",
+    projectName: "",
     url: ""
   },
   {
     id: "16",
-    projectName: " ",
+    projectName: "",
     url: ""
   },
   {
     id: "17",
-    projectName: " ",
+    projectName: "",
     url: ""
   },
   {
     id: "18",
-    projectName: " ",
+    projectName: "",
     url: ""
   },
   {
     id: "19",
-    projectName: " ",
+    projectName: "",
     url: ""
   },
   {
     id: "20",
-    projectName: " ",
+    projectName: "",
     url: ""
   }
 ]
 
 const renderProject = item => {
   return `
-  <div class="col-md-6">
-    <div class="alert alert-secondary" role="alert">
-      ${item.id}. ${item.projectName}
-      <button
-        type="button"
-        class="btn bg-light text-dark py-0 float-right"
-      >
-        <a href="${item.url}"> Live Demo</a>
-      </button>
+    <div class="col-md-6">
+      <div class="alert alert-secondary" role="alert">
+        ${item.id}. ${item.projectName}
+        <button
+          type="button"
+          class="btn bg-light text-dark py-0 float-right"
+        >
+          <a href="${item.url}"> Live Demo</a>
+        </button>
+      </div>
     </div>
-  </div>
-  `
+  `;
 }
 
-const renderPage = ()=> {
+const renderPage = () => {
   const mainContentEl = document.querySelector("[data-selector='main-content']")
-  console.log(mainContentEl);
-
   const html = `
-  <h1 class="p-4 text-center">Web Projects With Vanilla JavaScript</h1>
-  <div class="row justify-content-center mt-5">
-    ${data.map(renderProject).join("")}
-  </div>
-  `
+    <h1 class="p-4 text-center">Web Projects With Vanilla JavaScript</h1>
+    <div class="row justify-content-center mt-5">
+      ${data.map(renderProject).join("")}
+    </div>
+  `;
   mainContentEl.innerHTML = html
 }
 
