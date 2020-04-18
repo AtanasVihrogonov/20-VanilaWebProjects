@@ -16,7 +16,8 @@ body {
 }
 
 h1 {
-  color: #fff;
+  color: #dad8d8;
+  font-style: italic;
 }
 
 .screen {
@@ -46,11 +47,11 @@ h1 {
 }
 
 .controls .fa-play {
-  color: rgba(0, 128, 0, 0.600);
+  color: rgb(93, 184, 146);
 }
 
 .controls .fa-stop {
-  color: rgba(255, 0, 0, 0.600);
+  color: rgb(204, 84, 84);
 }
 
 .controls .fa-pouse {
