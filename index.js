@@ -21,8 +21,8 @@ const data = [
   },
   {
     id: "05",
-    projectName: "",
-    url:""
+    projectName: "DOM Array Methods",
+    url:"/dom-array-methods/index.html"
   },
   {
     id: "06",
