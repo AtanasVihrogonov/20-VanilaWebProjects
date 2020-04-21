@@ -16,8 +16,8 @@ const data = [
   },
   {
     id: "04",
-    projectName: "",
-    url: ""
+    projectName: "Currency Converter",
+    url: "/currency-converter/index.html"
   },
   {
     id: "05",
