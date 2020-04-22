@@ -1,15 +1,12 @@
 const main = document.getElementById('main');
-const addPerson = document.getElementById('add-person');
-const doubleWorth = document.getElementById('double-worth');
-const sortByRichest = document.getElementById('show-richest');
-const sortByLessMoney = document.getElementById('show-poor');
-const showOnlyMillionaire = document.getElementById('show-millionaire');
-const calculateTotalWorth = document.getElementById('calculate-worth');
+const addPersonBtn = document.getElementById('add-person');
+const doubleWorthBtn = document.getElementById('double-worth');
+const sortByRichestBtn = document.getElementById('show-richest');
+const sortByLessMoneyBtn = document.getElementById('show-poor');
+const showOnlyMillionaireBtn = document.getElementById('show-millionaire');
+const calculateTotalWorthBtn = document.getElementById('calculate-worth');
 
 let data = [];
-
-getRandomUser();
-getRandomUser();
 getRandomUser();
 
 // Fetch random user and add money
@@ -30,35 +27,47 @@ async function getRandomUser() {
 // Add new object to data array
 function addData(obj) {
   data.push(obj);
+
+  updateDOM();
 };
 
+// Update DOM
+function updateDOM(providedData = data) {
+  // Clear the main div
+  main.innerHTML = '<h2><strong>Person</strong>Wealth</h2>';
 
+  providedData.forEach(item => {
+    const element = document.createElement('div');
+    element.classList.add('person');
+    element.innerHTML = `<strong>${item.name}</strong>${formatMoney(item.money)}`;
+    main.appendChild(element);
+  });
+};
 
+// Double everyons money
+function doubleMoney() {
+  // Reassigning data arr to the same data arr and map through it
+  data = data.map((user) => {
+    return { ...user, money: user.money * 2 };
+  });
 
-main.addEventListener('click', () => {
+  updateDOM();
+};
 
-});
+// Sort the richest person
+function sortRichest() {
 
-addPerson.addEventListener('click', () => {
+};
 
-});
+// Format number as money
+function formatMoney(number) {
+  return '$ ' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+};
 
-doubleWorth.addEventListener('click', () => {
-
-});
-
-sortByRichest.addEventListener('click', () => {
-
-});
-
-sortByLessMoney.addEventListener('click', () => {
-
-});
-
-showOnlyMillionaire.addEventListener('click', () => {
-
-});
-
-calculateTotalWorth.addEventListener('click', () => {
-
-});
+// Event listeners
+addPersonBtn.addEventListener('click', getRandomUser);
+doubleWorthBtn.addEventListener('click', doubleMoney);
+sortByRichestBtn.addEventListener('click', sortRichest);
+sortByLessMoneyBtn.addEventListener('click', sortLessMoney);
+showOnlyMillionaireBtn.addEventListener('click', showOnlyMillionaire);
+calculateTotalWorthBtn.addEventListener('click', calculateTotalWorth);
