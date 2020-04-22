@@ -37,6 +37,11 @@ button {
   margin-bottom: 20px;
   font-weight: 500;
   font-size: 14px;
+  text-align: start;
+}
+
+button:hover {
+  background-color: #f4f6f7;
 }
 
 main {
@@ -66,8 +71,12 @@ h3 {
   margin: 20px 0 0;
 }
 
-span {
-  padding-right: 4px;
+p {
+  margin-bottom: 0;
+}
+
+i {
+  padding-left: 10px;
 }
 
 .person {

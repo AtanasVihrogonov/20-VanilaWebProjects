@@ -8,6 +8,8 @@ const calculateTotalWorthBtn = document.getElementById('calculate-worth');
 
 let data = [];
 getRandomUser();
+getRandomUser();
+getRandomUser();
 
 // Fetch random user and add money
 async function getRandomUser() {
@@ -47,16 +49,40 @@ function updateDOM(providedData = data) {
 // Double everyons money
 function doubleMoney() {
   // Reassigning data arr to the same data arr and map through it
-  data = data.map((user) => {
+  data = data.map(user => {
     return { ...user, money: user.money * 2 };
   });
 
   updateDOM();
 };
 
-// Sort the richest person
+// Sort users by richest
 function sortRichest() {
+  data.sort((a, b) => b.money - a.money);
+  updateDOM();
+};
 
+// Sort users by less money
+function sortLessMoney() {
+  data.sort((a, b) => a.money - b.money);
+  updateDOM();
+};
+
+// Filter only millionaire
+function showOnlyMillionaire() {
+  data = data.filter(user => user.money > 1000000);
+  updateDOM();
+};
+
+// Calculate the total worth
+function calculateTotalWorth() {
+  const total = data.reduce((acc, user) => (acc += user.money), 0);
+  //console.log(formatMoney(total));
+  const worthEl = document.createElement('div');
+
+  worthEl.innerHTML = `<h3>Total Worth: <strong>${formatMoney(total)}</stromg></h3>`;
+
+  main.appendChild(worthEl);
 };
 
 // Format number as money
