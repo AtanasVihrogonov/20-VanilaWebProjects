@@ -26,13 +26,13 @@ const data = [
   },
   {
     id: "06",
-    projectName: "",
-    url: ""
+    projectName: "Landing Page",
+    url: "/modal-menu-slider/index.html"
   },
   {
     id: "07",
-    projectName: "",
-    url:""
+    projectName: "Hangman",
+    url:"/hangman/index.html"
   },
   {
     id: "08",
