@@ -36,7 +36,49 @@ function displayWords() {
     finalMessage.innerText = 'Congratulation! You won! 😃';
     popup.style.display = 'flex';
   }
-     
 }
+
+// Update wrong letters
+function updateWrongLettersEl() {
+  console.log('Update wrong');
+};
+
+// Show notification
+function showNotification() {
+  // Add and remove show class
+  notification.classList.add('show');
+
+  setTimeout(() => {
+    notification.classList.remove('show');
+  }, 2000);
+};
+
+// Keydown letter press
+window.addEventListener('keydown', e => {
+  if (e.keyCode >= 65 && e.keyCode <= 90) {
+    const letter = e.key;
+
+    if (selectedWord.includes(letter)) {
+      // Push the letter on to correct letters array, but only if it's not already there
+      if (!correctLetters.includes(letter)) {
+        correctLetters.push(letter);
+
+        displayWords();
+      } else {
+        showNotification();
+      }
+
+    } else {
+
+      if (!wrongLetters.includes(letter)) {
+        wrongLetters.push(letter);
+
+        updateWrongLettersEl();
+      } else {
+        showNotification();
+      }
+    }
+  }
+});
 
 displayWords();
