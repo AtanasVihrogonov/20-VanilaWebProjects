@@ -36,6 +36,7 @@ h1 {
 }
 
 .figure-part {
+  stroke: #fff;
   display: none;
 }
 
@@ -65,7 +66,7 @@ h1 {
 }
 
 .letter {
-  border-bottom: 3px solid rgb(95, 128, 194);
+  border-bottom: 3px solid rgb(134, 129, 99);
   display: inline-flex;
   font-size: 22px;
   align-items: center;
@@ -77,7 +78,7 @@ h1 {
 }
 
 .popup-container {
-  background-color: rgba(56, 56, 56, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -90,7 +91,7 @@ h1 {
 }
 
 .popup {
-  background:  rgb(33, 58, 109);
+  background:  rgb(53, 53, 54);
   border-radius: 5px;
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 20px;

@@ -5,7 +5,7 @@ const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
 
-const figureParts = document.getElementById('figure-part');
+const figureParts = document.querySelectorAll('.figure-part');
 
 const words = ['application', 'programming', 'wizard', 'interface'];
 // Random generated from arrat of words
@@ -40,7 +40,29 @@ function displayWords() {
 
 // Update wrong letters
 function updateWrongLettersEl() {
-  console.log('Update wrong');
+  // 1.Display wrong latter
+  wrongLetterEl.innerHTML = `
+    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+    ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+  `;
+
+  // 2.Display parts
+  figureParts.forEach((part, index) => {
+    const errors = wrongLetters.length;
+    console.log(123);
+    if (index < errors) {
+      // Each part have index starting from 0
+      part.style.display = 'block';
+    } else {
+      part.style.display = 'none';
+    }
+  });
+
+  // 3.Check if lost
+  if (wrongLetters.length === figureParts.length) {
+    finalMessage.innerText = 'Unfortunately you lost. 😕';
+    popup.style.display = 'flex';
+  }
 };
 
 // Show notification
@@ -79,6 +101,23 @@ window.addEventListener('keydown', e => {
       }
     }
   }
+});
+
+// Restart game and play again
+playAgainBtn.addEventListener('click', () => {
+  // 1.Empty arrays
+  correctLetters.splice(0);
+  wrongLetters.splice(0);
+
+  // 2.Get the random word from the array -> display new word
+  let selectedWord = words[Math.floor(Math.random() * words.length)];
+
+  // 3. Call display word function again
+  displayWords();
+
+  // 4. Update wrong letters and hide the popup
+  updateWrongLettersEl();
+  popup.style.display = 'none';
 });
 
 displayWords();
