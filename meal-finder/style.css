@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
-/ :root {
-  --primary-color: rgb(245, 239, 235);
+
+:root {
+  --primary-color: rgb(189, 183, 179);
   --secondary-color: rgb(63, 61, 61);
 }
 
@@ -57,6 +58,50 @@ input[type='text'] {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
+
+/* Generate from JS */
+.meals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+
+.meal {
+  cursor: pointer;
+  position: relative;
+  height: 180px;
+  width: 180px;
+  text-align: center;
+}
+
+.meal-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: rgb(162, 170, 177);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease-in;
+  opacity: 0;
+}
+
+.meal:hover .meal-info {
+  opacity: 1;
+}
+
+.meal img {
+  width: 100%;
+  height: 100%;
+  border: 2px gray solid;
+  border-radius: 2px;
+}
+
+
 
 @media (max-width: 800px) and (max-width: 700px) and (max-width: 500px) {
   input[type='text'] {
