@@ -36,8 +36,8 @@ const data = [
   },
   {
     id: "08",
-    projectName: "",
-    url: ""
+    projectName: "Meal Finder",
+    url: "/meal-finder/index.html"
   },
   {
     id: "09",
