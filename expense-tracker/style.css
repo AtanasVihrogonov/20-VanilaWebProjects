@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 :root {
   --primary-color: rgb(248, 248, 248);
@@ -8,7 +7,7 @@
   --money-minus-color: #c0392b;
   --border-color: #dedede;
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  --amount-font-family: 'Montserrat', sans-serif;
+  --amount-font-family: 'Lato', sans-serif;
 }
 
 * {
@@ -17,7 +16,7 @@
 
 body {
   background-color: var(--primary-color);
-  font-family: 'Dosis', sans-serif;
+  font-family: var(--amount-font-family);
   margin: 0;
   min-height: 100vh;
   display: flex;
@@ -32,10 +31,13 @@ body {
 }
 
 h1 {
-  font-size: 20px;
-  font-family: var(--amount-font-family);
+  font-size: 24px;
   letter-spacing: 1px;
   margin: 0;
+}
+
+h2 {
+  margin: 0 0 15px 0;
 }
 
 h3 {
@@ -69,7 +71,6 @@ h4 {
 
 .money {
   font-size: 20px;
-  font-family: var(--amount-font-family);
   letter-spacing: 1px;
   margin: 5px 0;
 }
@@ -83,7 +84,7 @@ h4 {
 }
 
 label {
-  font-weight: bold;
+  font-weight: 500;
   display: inline-block;
   margin: 10px 0;
 }
@@ -109,10 +110,6 @@ input[type="number"] {
   padding: 10px;
   width: 100%;
   cursor: pointer;
-}
-
-span {
-  font-family:var(--amount-font-family);
 }
 
 .btn:focus,
