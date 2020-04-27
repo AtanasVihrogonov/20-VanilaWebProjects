@@ -41,8 +41,8 @@ const data = [
   },
   {
     id: "09",
-    projectName: "",
-    url: ""
+    projectName: "Expence Tracker",
+    url: "/expense-tracker/index.html"
   },
   {
     id: "10",
