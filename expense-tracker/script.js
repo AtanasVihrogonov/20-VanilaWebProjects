@@ -6,14 +6,50 @@ const form = document.getElementById('form');
 const text = document.getElementById('text');
 const amount = document.getElementById('amount');
 
-const dummyTransactions = [
-  { id: 1, text: 'Online Course', amount: -20 },
-  { id: 2, text: 'Work', amount: 300 },
-  { id: 3, text: 'Phone Screen', amount: -10 },
-  { id: 4, text: 'Cashback', amount: 70 }
-];
+// const dummyTransactions = [
+//   { id: 1, text: 'Online Course', amount: -20 },
+//   { id: 2, text: 'Work', amount: 300 },
+//   { id: 3, text: 'Phone Screen', amount: -10 },
+//   { id: 4, text: 'Cashback', amount: 70 }
+// ];
+const localStorageTransactions = JSON.parse(localStorage.getItem('transactions'));
 
-let transactions = dummyTransactions;
+// check if anything is on LS
+let transactions = 
+  localStorage.getItem('transactions') !== null ? 
+  localStorageTransactions : [];
+
+// Add transaction
+function addTransaction(e) {
+  e.preventDefault();
+
+  // Check if the form is empty
+  if (text.value.trim() === '' || amount.value.trim() === '') {
+    alert('Please add a text and amount');
+  } else {
+    const transaction = {
+      id: generateID(),
+      text: text.value,
+      amount: +amount.value  // This has to be a number
+    };
+
+    transactions.push(transaction);
+
+    addTransactionDOM(transaction);
+
+    updateValues();
+
+    updateLocalStorage();
+
+    text.value = '';
+    amount.value = '';
+  }
+};
+
+// Generate random ID
+function generateID() {
+  return Math.floor(Math.random() * 100000);
+};
 
 // Add transactions to DOM list
 function addTransactionDOM(transaction) {
@@ -29,7 +65,7 @@ function addTransactionDOM(transaction) {
   item.innerHTML = `
     ${transaction.text} 
     <span>${sign}${Math.abs(transaction.amount)}</span> 
-    <button class="delete-btn">x</button>
+    <button class="delete-btn" onclick="removeTransaction(${transaction.id})">x</button>
   `;
 
   list.appendChild(item);
@@ -45,8 +81,8 @@ function updateValues() {
 
   const income = amounts
     .filter(item => item > 0)
-    .reduce((acc, item) => (acc += item)
-    .toFixed(2));
+    .reduce((acc, item) => (acc += item), 0)
+    .toFixed(2);
 
   const expense = (amounts
     .filter(item => item < 0)
@@ -62,6 +98,21 @@ function updateValues() {
   money_minus.innerText = `$${expense}`;
 };
 
+// Remove transaction by ID
+function removeTransaction(id) {
+  // Remove from DOM
+  transactions = transactions.filter(transaction => transaction.id !== id);
+
+  updateLocalStorage();
+
+  init();
+};
+
+// Update local storage transactions
+function updateLocalStorage() {
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+};
+
 // Init app
 function init() {
   list.innerHTML = '';
@@ -72,3 +123,5 @@ function init() {
 };
 
 init();
+
+form.addEventListener('submit', addTransaction);
