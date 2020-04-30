@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap'); */
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Questrial', sans-serif;
+  /* font-family: 'Questrial', sans-serif; */
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   background-image: linear-gradient(to right top,
    #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec,
    #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1
@@ -130,11 +132,30 @@ body {
 }
 
 .progress {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
   background-color: #fe8daa;
+  color: rgb(41, 40, 40);
   border-radius: 5px;
   height: 100%;
   width: 0%;
   transition: width 0.1s linear;
 }
+
+.progress .start {
+  margin-top: 5px;
+  margin-right: 144px;
+  flex: 1;
+} 
+
+.progress .end {
+  margin-top: 5px;
+}
+
+
+
 
 

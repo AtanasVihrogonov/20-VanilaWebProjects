@@ -46,13 +46,13 @@ const data = [
   },
   {
     id: "10",
-    projectName: "",
-    url: ""
+    projectName: "Custom Music Player",
+    url: "/music-player/index.html"
   },
   {
     id: "11",
-    projectName: "",
-    url: ""
+    projectName: "Blog Post",
+    url: "/blog-post/index.html"
   },
   {
     id: "12",

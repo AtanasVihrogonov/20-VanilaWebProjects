@@ -11,13 +11,16 @@ const audio = document.getElementById('audio');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
+const start = document.querySelector('.start');
+const end = document.querySelector('.end');
+
 // Song title
 const songs = [
   'Low Deep - Casablanca',
   'Sade - I Miss You',
   'Edward Maya - This Is My Life',
-  'Deluno - Private Love',
-  'Deep Purple - unknowing'
+  'Delyno - Private Love',
+  'Deep Purple - Smoke on the Water'
 ];
 
 // Keep track of song
@@ -55,6 +58,65 @@ function pauseSong() {
   audio.pause();
 };
 
+// Previous song
+function prevSong() {
+  songIndex--;  // --> decrease by 1 = --;
+
+  if (songIndex < 0) {
+    songIndex = songs.length - 1;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+};
+
+// Next song
+function nextSong() {
+  songIndex++;  // --> increase by 1 = ++;
+
+  if (songIndex > songs.length - 1) {
+    songIndex = 0;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+};
+
+// Update progress bar
+function updareProgress(e) {
+  const {duration, currentTime} = e.srcElement;
+  //console.log(duration, currentTime);
+  const progressPercent = (currentTime / duration) * 100;
+  // console.log(progressPercent);
+  let s = parseInt(audio.currentTime % 60);
+  let m = parseInt((audio.currentTime / 60) % 60);
+  if (s / 10 < 1) s = '0'+ s;
+  if (m / 10 < 1) m = '0'+ m;
+  let es = parseInt(audio.duration % 60);
+  let em = parseInt((audio.duration / 60) % 60);
+  if (es / 10 < 1) es = '0'+ es;
+  if (em / 10 < 1) em = '0'+ em;
+
+  // Set to width of the progress
+  progress.style.width = `${progressPercent}%`;
+  start.innerHTML = m + ":" + s;
+  if(em) {
+    end.innerHTML = em + ":" + es;
+  } 
+};
+
+// Set progress bar
+function setProgress(e) {
+  const width = this.clientWidth;
+  const clickX = e.offsetX;
+  // console.log(clickX);
+  const duration = audio.duration;
+
+  audio.currentTime = (clickX / width) * duration;
+}
+
 // Event listeners
 playBtn.addEventListener('click', () => {
   const isPlaying = musicContainer.classList.contains('play');
@@ -65,3 +127,16 @@ playBtn.addEventListener('click', () => {
     playSong();
   }
 });
+
+// Change song
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
+
+// Time song update
+audio.addEventListener('timeupdate', updareProgress);
+
+// Click on progress bar
+progressContainer.addEventListener('click', setProgress);
+
+// Song ends
+audio.addEventListener('ended', nextSong);
