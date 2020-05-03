@@ -56,8 +56,8 @@ const data = [
   },
   {
     id: "12",
-    projectName: "",
-    url: ""
+    projectName: "Typing Game",
+    url: "/typing-game/index.html"
   },
   {
     id: "13",

@@ -102,7 +102,7 @@ function updareProgress(e) {
   // Set to width of the progress
   progress.style.width = `${progressPercent}%`;
   start.innerHTML = m + ":" + s;
-  if(em) {
+  if(em && !progressPercent) {
     end.innerHTML = em + ":" + es;
   } 
 };
