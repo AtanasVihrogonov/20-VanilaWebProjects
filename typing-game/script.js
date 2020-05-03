@@ -7,7 +7,7 @@ const text = document.getElementById('text');
 const timeEl = document.getElementById('time');
 const scoreEl = document.getElementById('score');
 const endGameEl = document.getElementById('end-game-container');
-
+const roleEl = document.querySelector('.role');
 let random;
 // Init score
 let score = 0;
@@ -84,7 +84,7 @@ function gameOver() {
     <button onclick="window.location.reload()">Reload</button>
   `;
 
-  // Change display to flex on css --> line 105
+  // Change display to flex on css --> line 117
   endGameEl.style.display = 'flex';
 };
 
@@ -115,7 +115,8 @@ text.addEventListener('input', (e) => {
 });
 
 // Settings btn click
-settingsBtn.addEventListener('click', () => settings.classList.toggle('hide')); // CSS Line 57
+settingsBtn.addEventListener('click', () => settings.classList.toggle('hide')); 
+settingsBtn.addEventListener('click', () => roleEl.classList.toggle('hide'));
 
 // Settings select
 settingsForm.addEventListener('change', e => {

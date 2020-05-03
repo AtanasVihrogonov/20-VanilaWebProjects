@@ -57,6 +57,26 @@ button:focus {
 .settings.hide {
   transform: translateY(-100%);
 }
+
+.role.hide {
+  transform: translateY(-600%);
+}
+
+.role {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 60px;
+  color: #f9f9f9;
+  margin-top: 20px;
+  font-size: 14px;
+  width: 50%;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
 .container {
   background-color: #34495e;
   padding: 20px;
