@@ -62,7 +62,7 @@ const data = [
   {
     id: "13",
     projectName: "Speech Text Reader",
-    url: "/speach-reader/index.html"
+    url: "/speech-reader/index.html"
   },
   {
     id: "14",
