@@ -59,10 +59,14 @@ h1 {
   transition:  all 1s ease-in-out;
 }
 
+.text-box.show {
+  transform: translate(-50%, 0);
+}
+
 .text-box select {
-  background-color: #7DCEA0;
+  background-color: #fff+;
   border: 0;
-  color: #fff;
+  color: #010101;
   font-size: 12px;
   height: 30px;
   width: 100%;
