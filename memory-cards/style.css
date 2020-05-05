@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Mukta', sans-serif;
   background-color: #fff;
   display: flex;
   flex-direction: column;
