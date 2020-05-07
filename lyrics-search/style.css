@@ -71,7 +71,7 @@ form button {
   position: absolute;
   top: 2px;
   right: 2px;
-  background-color: #5667fdc5;
+  background-color: #c79e60;
   border: 0;
   border-radius: 50px;
   color: #fff;
@@ -81,7 +81,7 @@ form button {
 
 /* Generate from JS */
 .btn {
-  background-color: #38406d;
+  background-color: #644b24;
   border: 0;
   border-radius: 10px;
   color: #fff;
