@@ -71,8 +71,8 @@ const data = [
   },
   {
     id: "15",
-    projectName: "",
-    url: ""
+    projectName: "Lyrics Search",
+    url: "/lyrics-search/index.html"
   },
   {
     id: "16",
