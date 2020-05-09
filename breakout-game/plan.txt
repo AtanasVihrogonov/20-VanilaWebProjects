@@ -6,8 +6,8 @@
 6. Add update() - Animate - requestAnimationFrame(cd) (x)
 7. Move paddle                                        (x)
 8. Keyboard event handlers to move paddle             (x)
-9. Move ball
-10. Add wall bounderies
+9. Move ball                                          (x)
+10. Add wall bounderies                               (x)
 11. Increase the score when the breaks break
 12. Lose - redraw bricks, reset score
 
