@@ -49,8 +49,8 @@ body {
   height: 60px;
 }
 
-.draggable-list li.over .draggable{
-
+.draggable-list li.over .draggable {
+  background-color: #eaeaea;
 }
 
 .draggable-list .person-name {
@@ -74,6 +74,24 @@ body {
   padding: 15px;
   flex: 1;
 }
+
+.check-btn {
+  background-color: var(--background-color);
+  border: none;
+  color: var(--text-color);
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.check-btn:active {
+  transform: scale(0.98);
+}
+
+.check-btn:focus {
+  outline: none;
+}
+
 
 
 
