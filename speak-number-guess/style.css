@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@100;200;300;400;500&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #2f3542 url('img/bg.jpg') no-repeat left center/cover;
+  color: #f7f7f7;
+  min-height: 100vh;
+  font-family: 'Rokkitt', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+h1, h3 {
+  margin-bottom: 0;
+  font-weight: 300;
+  line-height: 1;
+}
+
+p {
+  line-height: 1.5;
+  margin: 0;
+}
+
+.play-again {
+  padding: 8px 15px;
+  border: 0;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.msg   {
+  font-size: 1.5em;
+  margin-top: 40px;
+}
+
+.box {
+  border: 1px solid #dedede;
+  display: inline-block;
+  font-size: 30px;
+  margin: 20px;
+  padding: 10px;
+}
+
+@media (max-width: 500px) {
+  img {
+    width: 50%;
+    height: 60%;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 1.5em;
+  }
+
+  .box {
+    margin-left: 30px;
+  }
+}
