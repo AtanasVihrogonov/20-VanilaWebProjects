@@ -4,7 +4,7 @@
 }
 
 body {
-  background: #2f3542 url('img/bg.jpg') no-repeat left center/cover;
+  background: #1a1b1b url('img/bg.jpg') no-repeat left center/cover;
   color: #f7f7f7;
   min-height: 100vh;
   font-family: 'Rokkitt', serif;
@@ -13,6 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
+  opacity: 0.70;
 }
 
 h1, h3 {
@@ -39,11 +40,15 @@ p {
   margin-top: 40px;
 }
 
+.msg > div:first-child {
+  margin-left: 15px;
+}
+
 .box {
   border: 1px solid #dedede;
   display: inline-block;
   font-size: 30px;
-  margin: 20px;
+  margin: 20px 37px;
   padding: 10px;
 }
 
