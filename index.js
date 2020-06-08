@@ -120,7 +120,7 @@ const renderProject = item => {
 const renderPage = () => {
   const mainContentEl = document.querySelector("[data-selector='main-content']")
   const html = `
-    <h1 class="p-4 text-center">Web Projects With Vanilla JavaScript</h1>
+    <h1 class="p-4 text-center">Vanilla Web Projects</h1>
     <div class="row justify-content-center mt-5">
       ${data.map(renderProject).join("")}
     </div>
